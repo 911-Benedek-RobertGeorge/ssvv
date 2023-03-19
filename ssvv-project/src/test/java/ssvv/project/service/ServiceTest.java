@@ -131,7 +131,7 @@ public class ServiceTest extends TestCase {
     @Test
     public void testAddStudent_validGroup() {
 
-        Student student = new Student("abcde", "name", 931, "validEmail@domeniu.com");
+        Student student = new Student("abcde", "name", 1, "validEmail@domeniu.com");
         Student returnedStudent = service.addStudent(student);
         assertNotNull(returnedStudent);
         assertEquals(returnedStudent.getID() , "abcde");
@@ -152,9 +152,36 @@ public class ServiceTest extends TestCase {
         Student student = new Student("1", "name", 0, "email@yahoo.com");
         try {
             service.addStudent(student);
-            assert(false);
-        }catch (Exception exception){
-            assert(true);
+            assert (false);
+        } catch (Exception exception) {
+            assert (true);
         }
+    }
+    @Test
+    public void testAddStudent_BVA_MaxInt() {
+
+        Student student = new Student("abcde", "name",Integer.MAX_VALUE + 1 , "validEmail@domeniu.com");
+        try {
+            service.addStudent(student);
+            assert (false);
+        } catch (Exception exception) {
+            assert (true);
+        }
+    }
+    @Test
+    public void testAddStudent_BVA_UpperLimit() {
+
+        Student student = new Student("abcde", "name", Integer.MAX_VALUE - 1, "validEmail@domeniu.com");
+        Student returnedStudent = service.addStudent(student);
+        assertNotNull(returnedStudent);
+        assertEquals(returnedStudent.getID() , "abcde");
+    }
+    @Test
+    public void testAddStudent_BVA_LowerLimit() {
+
+        Student student = new Student("abcde", "name", 1, "validEmail@domeniu.com");
+        Student returnedStudent = service.addStudent(student);
+        assertNotNull(returnedStudent);
+        assertEquals(returnedStudent.getID() , "abcde");
     }
 }
