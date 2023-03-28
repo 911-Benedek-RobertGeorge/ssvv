@@ -1,10 +1,9 @@
-package ssvv.project.validation;
-
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import ssvv.project.domain.Tema;
+import ssvv.project.validation.TemaValidator;
 
 import static org.junit.Assert.*;
 
