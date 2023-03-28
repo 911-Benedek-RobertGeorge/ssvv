@@ -25,7 +25,7 @@ public class TemaValidatorTest  extends TestCase {
         }
     }
     @Test
-    public void validate_nullId() {
+        public void validate_nullId() {
         Tema tema = new Tema(null, "descriere", 12, 12);
         try {
             validator.validate(tema);
