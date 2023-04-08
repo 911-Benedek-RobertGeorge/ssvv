@@ -33,6 +33,8 @@ public class AddAssignmentTest extends TestCase{
 
         service = new Service(studentXMLRepository, studentValidator, temaXMLRepository, temaValidator, notaXMLRepository, notaValidator);
     }
+    @Test
+    public void test(){}
 
 
 }
