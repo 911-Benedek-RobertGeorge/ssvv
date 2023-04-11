@@ -65,7 +65,7 @@ public class TemaValidatorTest  extends TestCase {
             validator.validate(tema);
             assert(false);
         }catch(Exception exp){
-            assert(exp instanceof ValidationException) ;
+            assert(exp instanceof ValidationException);
         }
     }
     @Test
