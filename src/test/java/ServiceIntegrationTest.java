@@ -72,7 +72,6 @@ public class ServiceIntegrationTest {
     public void addNota() {
         Nota nota = new Nota("2","1","1",8.7, LocalDate.parse("2018-10-10"));
         double returnedNota = service.addNota(nota,"FOARTE BINE!!!");
-        assertNotNull(returnedNota);
         assertEquals(returnedNota, 8.7,0.0);
     }
 
