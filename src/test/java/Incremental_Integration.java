@@ -1,5 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -19,6 +21,7 @@ import java.time.LocalDate;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.when;
+@RunWith(JUnit4.class)
 
 public class Incremental_Integration{
     @Mock
@@ -83,12 +86,12 @@ public class Incremental_Integration{
         assertEquals(returnedTema.getID() , "1");
 
 
-        Nota nota = new Nota("1234",returnedStudent.getID(),returnedTema.getID(),9.7, LocalDate.parse("2018-11-04"));
+        Nota nota = new Nota("1234",returnedStudent.getID(),returnedTema.getID(),9.7, LocalDate.parse("2018-11-10"));
         when(notaXMLRepository.save(nota)).thenReturn(nota);
         when(studentXMLRepository.findOne(returnedStudent.getID())).thenReturn(returnedStudent);
         when(temaXMLRepository.findOne(returnedTema.getID())).thenReturn(returnedTema);
         double returnedNota = service.addNota(nota,"Great");
-        assertEquals(9.7  ,returnedNota,0.0);
+        assertEquals(7.2 ,returnedNota,0.1);
 
 
 

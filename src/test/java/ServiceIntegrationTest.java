@@ -14,18 +14,9 @@ import ssvv.project.validation.TemaValidator;
 
 import static org.junit.Assert.*;
  
-import junit.framework.TestCase;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+
 import org.junit.runners.JUnit4;
-import ssvv.project.domain.Student;
-import ssvv.project.repository.NotaXMLRepo;
-import ssvv.project.repository.StudentXMLRepo;
-import ssvv.project.repository.TemaXMLRepo;
-import ssvv.project.validation.NotaValidator;
-import ssvv.project.validation.StudentValidator;
-import ssvv.project.validation.TemaValidator;
+
 
 import java.time.LocalDate;
 
