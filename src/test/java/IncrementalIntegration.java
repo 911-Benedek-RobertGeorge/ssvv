@@ -23,7 +23,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.when;
 @RunWith(JUnit4.class)
 
-public class Incremental_Integration{
+public class IncrementalIntegration {
     @Mock
     private StudentXMLRepo studentXMLRepository;
     @Mock
